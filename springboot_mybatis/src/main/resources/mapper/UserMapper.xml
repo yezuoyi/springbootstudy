@@ -10,19 +10,19 @@
 
 
     <update id="updateUserByUsername" parameterMap="user">
-        UPDATE USER SET USER_PASSWORD=#{user_password} WHERE USER_NAME=#{user_name}
+        UPDATE user SET USER_PASSWORD=#{user_password} WHERE USER_NAME=#{user_name}
     </update>
 
     <delete id="deleteUserByUsername" parameterType="String">
-        DELETE FROM USER WHERE USER_NAME=#{1}
+        DELETE FROM user WHERE USER_NAME=#{1}
     </delete>
 
     <!-- 使用alias自定义的parameterType-->
     <insert id="saveUser" parameterType="user">
-        INSERT INTO USER (user_password,user_name) VALUES (#{user_password},#{user_name})
+        INSERT INTO user (user_password,user_name) VALUES (#{user_password},#{user_name})
     </insert>
 
     <select id="getUserList" resultMap="user">
-        SELECT  * FROM USER
+        SELECT  * FROM user
     </select>
 </mapper>
